@@ -32,6 +32,7 @@ import java.util.Date;
 import de.grobox.transportr.R;
 import de.grobox.transportr.ui.LineView;
 import de.schildbach.pte.dto.Departure;
+import me.chensir.expandabletextview.ExpandableTextView;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -125,7 +126,8 @@ class DepartureViewHolder extends RecyclerView.ViewHolder {
 		if (delayTime == 0) {
 			delay.setVisibility(GONE);
 		} else {
-			delay.setText(getDelayString(delayTime));
+			String delayText = getDelayString(delayTime);
+			((ExpandableTextView) message.setText(delayText));
 			delay.setVisibility(VISIBLE);
 			if (delayTime <= 0) delay.setTextColor(ContextCompat.getColor(delay.getContext(), R.color.md_green_500));
 			else delay.setTextColor(ContextCompat.getColor(delay.getContext(), R.color.md_red_500));
