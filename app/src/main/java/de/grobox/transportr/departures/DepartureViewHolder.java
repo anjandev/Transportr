@@ -26,6 +26,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.common.base.Strings;
+import com.ms.square.android.expandabletextview.ExpandableTextView;
 
 import java.util.Date;
 
@@ -64,7 +65,7 @@ class DepartureViewHolder extends RecyclerView.ViewHolder {
 		delay = v.findViewById(R.id.delay);
 		destination = v.findViewById(R.id.destinationView);
 		position = v.findViewById(R.id.positionView);
-		message = v.findViewById(R.id.messageView);
+		message = v.findViewById(R.id.expandable_text);
 	}
 
 	void bind(Departure dep) {
@@ -125,7 +126,9 @@ class DepartureViewHolder extends RecyclerView.ViewHolder {
 		if (delayTime == 0) {
 			delay.setVisibility(GONE);
 		} else {
-			delay.setText(getDelayString(delayTime));
+			String delayText = getDelayString(delayTime);
+			ExpandableTextView delayMessageView = (ExpandableTextView) message;
+			delayMessageView.setText(delayText);
 			delay.setVisibility(VISIBLE);
 			if (delayTime <= 0) delay.setTextColor(ContextCompat.getColor(delay.getContext(), R.color.md_green_500));
 			else delay.setTextColor(ContextCompat.getColor(delay.getContext(), R.color.md_red_500));

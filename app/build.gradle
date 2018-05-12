@@ -158,6 +158,8 @@ dependencies {
 		exclude group: 'com.google.code.findbugs'
 	}
 	kaptAndroidTestDebug "com.google.dagger:dagger-compiler:$daggerVersion"
+
+	compile 'com.ms-square:expandableTextView:0.1.4'
 }
 
 dependencyVerification {
