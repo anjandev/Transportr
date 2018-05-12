@@ -116,8 +116,8 @@
 
 		<me.chensir.expandabletextview.ExpandableTextView
 			android:id="@+id/messageView"
-			android:layout_width="5dp"
-			android:layout_height="3dp"
+			android:layout_width="4dp"
+			android:layout_height="4dp"
 			android:layout_marginTop="8dp"
 			android:textColor="@color/holo_red_light"
 			android:textSize="12sp"
@@ -125,7 +125,7 @@
 			app:layout_constraintRight_toRightOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/destinationView"
 			app:maxCollapsedLines="4"
-			tools:text="This is a message that would be displayed and might be potentially very long."/>
+			tools:text="This is a message that would be displayed and might be potentially very long.">
 		</me.chensir.expandabletextview.ExpandableTextView>
 
 	</android.support.constraint.ConstraintLayout>
